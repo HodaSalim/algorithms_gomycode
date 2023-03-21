@@ -1,0 +1,20 @@
+ALGORITHM countSentence
+VAR
+    VAR sentence:STRING
+    VAR chars:INTEGER
+    VAR words:INTEGER
+    VAR vowels:INTEGER
+BEGIN
+    write:("Please enter your sentence");
+    read:(sentence);
+
+    FOR i FROM 0 TO sentence.length STEP 1  DO
+        chars = chars + 1;
+
+        IF (i == " ") THEN
+            words = words + 1;
+        ELSE_IF (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") THEN
+            vowels = vowels + 1;
+        END_IF
+    END_FOR
+END
