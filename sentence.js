@@ -1,15 +1,29 @@
-function countSentence(sentence) {
-  var chars = 0;
-  var words = 1;
-  var vowels = 0;
-  var lowerSentence = sentence.toLowerCase();
-
-  for (var i = 0; i < lowerSentence.length; i++) {
-    chars++;
-    if (lowerSentence[i] == " ") {
-      words++;
-    } else if (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") {
+function sentenceStats(sentence) {
+  let vowels = 0;
+  const lowerCaseSentence = sentence.toLowerCase();
+  const chars = sentence.length;
+  let words = 1;
+  if (chars === 0) {
+    console.log("this is an empty string");
+    words = 0;
+  }
+  for (let i = 0; i < chars; i++) {
+    let char = lowerCaseSentence[i];
+    if (
+      char === "a" ||
+      char === "e" ||
+      char === "i" ||
+      char === "o" ||
+      char === "u"
+    ) {
       vowels++;
+    } else if (lowerCaseSentence[i] == " ") {
+      words++;
     }
   }
+  console.log(
+    `number of words is: ${words}, number of vowels: ${vowels}, and the number of characters is ${chars}`
+  );
 }
+
+sentenceStats("Hello World");
